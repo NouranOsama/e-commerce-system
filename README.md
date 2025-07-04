@@ -1,18 +1,52 @@
-## Getting Started
+## 🧪 Test Cases
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+---
 
-## Folder Structure
+### ✅ First Test Case
+```java
+ExpirableProduct cheese = new ExpirableProduct("Cheese", 100.0f, 10, true, 0.4f, LocalDate.now().plusDays(7));
+ExpirableProduct biscuits = new ExpirableProduct("Biscuits", 150.0f, 5, true, 0.7f, LocalDate.now().plusDays(7));
 
-The workspace contains two folders by default, where:
+cart.addToCart(cheese, 2);
+cart.addToCart(biscuits, 1);
+```
+#### Terminal output:
+**Shipment notice**
+2x Cheese (400g each)
+1x Biscuits (699g each)
+Total weight: 1.5 kg
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+**Checkout receipt**
+2x Cheese 200.0
+1x Biscuits 150.0
+-------------------
+Subtotal 350.0
+Shipping 30.0
+Amount 380.0
+Checkout successful!: 380.0
+Current balance 1620.0
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### ✅ Second Test Case
+```java
+ExpirableProduct meat = new ExpirableProduct("Meat", 500.0f, 2, true, 0.5f, LocalDate.now().plusDays(7));
+Product tv = new Product("TV", 1000.0f, 5, true, 3.0f);
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+cart.addToCart(tv, 1);
+cart.addToCart(meat, 3);
+```
+#### Terminal output:
+Error during checkout: out of stock! “Insufficient quantity”
 
-## Dependency Management
+### ✅ Third Test Case
+```java
+ExpirableProduct meat = new ExpirableProduct("Meat", 500.0f, 10, true, 0.5f, LocalDate.now().plusDays(7));
+Product tv = new Product("TV", 1000.0f, 5, true, 3.0f);
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Customer customer = new Customer("Nouran", 2000.0f);
+
+Cart cart = new Cart();
+cart.addToCart(tv, 1);
+cart.addToCart(meat, 3);
+```
+#### Terminal output:
+Error during checkout: Insufficient balance! 
