@@ -7,7 +7,7 @@ public class Main {
             ExpirableProduct meat = new ExpirableProduct("Meat", 500.0f, 10, true, 0.5f, LocalDate.now().plusDays(7));
             Product tv = new Product("TV", 1000.0f, 5, true, 3.0f);
 
-            Customer customer = new Customer("Nouran", 2000.0f);
+            Customer customer = new Customer("Nouran", 5000.0f);
 
             Cart cart = new Cart();
             cart.addToCart(tv, 1);
