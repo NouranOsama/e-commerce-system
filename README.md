@@ -11,19 +11,30 @@ cart.addToCart(cheese, 2);
 cart.addToCart(biscuits, 1);
 ```
 #### Terminal output:
-**Shipment notice**
+#### Shipment notice
+
 2x Cheese (400g each)
+
 1x Biscuits (699g each)
+
 Total weight: 1.5 kg
 
-**Checkout receipt**
+#### Checkout receip
+
 2x Cheese 200.0
+
 1x Biscuits 150.0
+
 -------------------
+
 Subtotal 350.0
+
 Shipping 30.0
+
 Amount 380.0
+
 Checkout successful!: 380.0
+
 Current balance 1620.0
 
 ### ✅ Second Test Case
